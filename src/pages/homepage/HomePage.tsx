@@ -5,6 +5,7 @@ import {
   dummyWeatherData,
   dummyWeatherData2,
   dummyWeatherData3,
+  dummyWeatherData4,
 } from "../../data/DummyData";
 import WeatherCard from "../weathercard/WeatherCard";
 import bgImage from "../../assets/images/1.jpg";
@@ -18,14 +19,17 @@ const HomePage = () => {
     setSearchQuery(query);
     // Filter data based on the search query
     switch (query.toLowerCase()) {
-      case "usa":
+      case "USA":
         setWeatherData(dummyWeatherData);
         break;
-      case "london":
+      case "London":
         setWeatherData(dummyWeatherData2);
         break;
-      case "amsterdam":
+      case "Amsterdam":
         setWeatherData(dummyWeatherData3);
+        break;
+      case "India":
+        setWeatherData(dummyWeatherData4);
         break;
       default:
         setWeatherData(dummyWeatherData);
