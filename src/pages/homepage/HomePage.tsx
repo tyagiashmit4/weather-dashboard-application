@@ -65,16 +65,16 @@ const HomePage = () => {
                   height: "100%",
                 }}
               >
-                <Typography variant="h4" color={"DarkSlateGray"}>
+                <Typography variant="h4" color={"Black"}>
                   Climate Change 
                 </Typography>
-                <Typography variant="h5" color={"DarkSlateGray"}>
+                <Typography variant="h5" color={"Black"}>
                   Weather Forecast Dashboard
                 </Typography>
-                <Typography variant="subtitle1" color={"DarkSlateGray"}>
+                <Typography variant="subtitle1" color={"Black"}>
                   Welcome to see the weather here.
                 </Typography>
-                <Typography variant="subtitle1" color={"DarkSlateGray"}>
+                <Typography variant="subtitle1" color={"Black"}>
                   {" "}
                   Make your plans according to that.
                 </Typography>
