@@ -1,46 +1,72 @@
-# Getting Started with Create React App
+Weather Forecast Dashboard
+This project is a Weather Forecast Dashboard built using React, TypeScript and Material-UI components. It allows users to view weather information for different locations and provides a user-friendly interface for searching and displaying weather data.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Installation
+To run this project locally, follow these steps:
 
-## Available Scripts
+Clone the repository to your local machine:
+bash
+git clone https://github.com/your-username/weather-forecast-dashboard.git
 
-In the project directory, you can run:
+Navigate to the project directory:
 
-### `npm start`
+bash
+cd weather-forecast-dashboard
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Install dependencies using npm or yarn:
+bash
+npm install
+# or
+yarn install
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Install MaterialUI using npm or yarn:
+bash
+1.npm i @mui/material
+2.npm install @mui/material @emotion/react @emotion/styled
+3.npm i @mui/icons-material
 
-### `npm test`
+# or
+1.yarn add @mui/icons-material
+2.yarn add @mui/material @emotion/react @emotion/styled
+3.yarn add @mui/icons-material 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Start the development server:
+bash
+npm start
+# or
+yarn start
+Open your browser and visit http://localhost:3000 to view the Weather Forecast Dashboard.
 
-### `npm run build`
+Project Structure
+The project structure is organized as follows:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+src/: Contains the source code for the project.
+  components/: Contains reusable components used throughout the application.
+    common/: Contains common components like cards, navbar, and search bar.
+        card/: Contains the CommonCard component used for displaying weather information.
+        navbar/: Contains the CommonNavbar component for the application's navigation bar.
+        searchbar/: Contains the CommonSearchbar component for searching weather data.
+    weathercard/: Contains the WeatherCard component for displaying weather details.
+  assets/: Contains static assets such as images used in the application.
+  data/: Contains dummy weather data used for testing and development.
+  pages/: Contains the main pages of the application.
+       HomePage.js: Main page component rendering weather data and search functionality.
+       App.js: Main application component where routing and layout are defined.
+index.js: Entry point of the React application.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Usage
+Navbar: The navigation bar at the top allows users to navigate through different sections of the application.
+Search Bar: Users can input a country name to search for weather data related to that country.
+Weather Cards: Weather information for the searched country is displayed using WeatherCard components, with daily weather details shown within each card.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Dependencies
+React
+Material-UI
+Axios (for API calls, not included in this code snippet)
+Contributing
+Contributions to this project are welcome. If you find any issues or have suggestions for improvements, feel free to create a pull request or open an issue in the repository.
 
-### `npm run eject`
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Feel free to modify and expand upon this README to include more specific details or instructions tailored to your project's needs.
