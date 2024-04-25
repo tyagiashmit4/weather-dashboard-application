@@ -9,7 +9,7 @@ const CommonNavbar = () => {
           <IconButton
             size="large"
             edge="start"
-            color="inherit"
+            color={"inherit"}
             
             aria-label="menu"
             sx={{ mr: 2 }}

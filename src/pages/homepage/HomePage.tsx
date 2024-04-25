@@ -19,16 +19,16 @@ const HomePage = () => {
     setSearchQuery(query);
     // Filter data based on the search query
     switch (query.toLowerCase()) {
-      case "USA":
+      case "usa":
         setWeatherData(dummyWeatherData);
         break;
-      case "London":
+      case "london":
         setWeatherData(dummyWeatherData2);
         break;
-      case "Amsterdam":
+      case "amsterdam":
         setWeatherData(dummyWeatherData3);
         break;
-      case "India":
+      case "india":
         setWeatherData(dummyWeatherData4);
         break;
       default:
