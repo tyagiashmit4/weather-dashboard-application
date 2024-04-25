@@ -46,3 +46,18 @@ export const dummyWeatherData3 = [
     },
   ];
   
+  export const dummyWeatherData4 = [
+    {
+      country: "India",
+      temp: "31°C",
+      sunrise: "06:00AM",
+      sunset: "06:45 PM",
+      humidity: "70%",
+      windSpeed: "10 km/h",
+      dailyWeather: [
+        { day: "Monday", temp: "28°C" },
+        { day: "Tuesday", temp: "27°C" },
+        { day: "Wednesday", temp: "29°C" },
+      ],    
+    }
+  ]
