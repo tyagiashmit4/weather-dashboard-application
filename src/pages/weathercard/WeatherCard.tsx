@@ -4,6 +4,7 @@ import CommonCard from "../../components/common/card/CommonCard";
 import sun from "../../assets/images/sun.avif";
 import pic from "../../assets/images/weather2.jpg"
 
+//* Define props interface for WeatherCard
 interface WeatherCardProps {
   country: string;
   temp: string;
@@ -14,6 +15,7 @@ interface WeatherCardProps {
   dailyWeather: { day: string; temp: string }[];
 }
 
+//* Define WeatherCard functional component with React.FC type and destructured props
 const WeatherCard: React.FC<WeatherCardProps> = ({
   country,
   temp,
@@ -31,7 +33,9 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
       imageUrl={pic}
       content={
         <Grid container spacing={2} >
-          {dailyWeather.map((dayWeather, index) => (
+          {/* Map through dailyWeather data and render CommonCard for each day */}
+         {dailyWeather.map((dayWeather, index) => (
+            
             <Grid item xs={4} key={index}>
               <CommonCard
                 title={dayWeather.day}

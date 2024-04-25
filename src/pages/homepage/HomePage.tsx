@@ -6,18 +6,22 @@ import {
   dummyWeatherData2,
   dummyWeatherData3,
   dummyWeatherData4,
-} from "../../data/DummyData";
-import WeatherCard from "../weathercard/WeatherCard";
-import bgImage from "../../assets/images/1.jpg";
-import Navbar from "../../components/common/navbar/Navbar";
+} from "../../data/DummyData"; 
+import WeatherCard from "../weathercard/WeatherCard"; 
+import bgImage from "../../assets/images/1.jpg"; 
+import Navbar from "../../components/common/navbar/Navbar"; 
 
 const HomePage = () => {
-  const [searchQuery, setSearchQuery] = useState<string>("");
+
+  //* State for search query and weather data
+  const [searchQuery, setSearchQuery] = useState<string>(""); 
   const [weatherData, setWeatherData] = useState(dummyWeatherData);
 
+  //* Function to handle search and update weather data
   const handleSearch = (query: string) => {
     setSearchQuery(query);
-    // Filter data based on the search query
+
+    //*Filter data based on the search query
     switch (query.toLowerCase()) {
       case "usa":
         setWeatherData(dummyWeatherData);
@@ -47,6 +51,7 @@ const HomePage = () => {
         position: "relative",
       }}
     >
+      {/* Render the Navbar component */}
       <Navbar />
       <div
         style={{
@@ -69,6 +74,7 @@ const HomePage = () => {
                   height: "100%",
                 }}
               >
+                {/* Render introductory text and the SearchBar component */}
                 <Typography variant="h4" color={"Black"}>
                   Climate Change 
                 </Typography>
@@ -87,6 +93,7 @@ const HomePage = () => {
             </Grid>
             <Grid item xs={12} md={6}>
               <Grid container spacing={3} justifyContent="center">
+                {/* Map through weather data and render WeatherCard components */}
                 {weatherData.map((weather, index) => (
                   <Grid item key={index}>
                     <WeatherCard {...weather} />
