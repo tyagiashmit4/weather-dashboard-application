@@ -8,7 +8,6 @@ import { fetchWeatherData, WeatherData } from "../../services/WeatherService";
 const HomePage = () => {
 
   //* State for search query and weather data
-  const [searchQuery, setSearchQuery] = useState<string>(""); 
   const [weatherData, setWeatherData] = useState<WeatherData[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
@@ -22,7 +21,6 @@ const HomePage = () => {
   const handleSearch = async (query: string) => {
     if (!query) return;
     
-    setSearchQuery(query);
     setLoading(true);
     setError(null);
 
