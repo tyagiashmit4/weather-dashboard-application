@@ -1,41 +1,65 @@
 import React from "react";
-import { Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 //* Define props interface for CommonCard component
 interface CommonCardProps {
   title: string;
-  subtitle: string;
-  imageUrl: string;
-  content: React.ReactNode; //* Content can be any valid React Node
+  subtitle?: string;
+  imageUrl?: string;
+  content?: React.ReactNode;
+  className?: string;
+  style?: React.CSSProperties;
 }
 
-//* Define CommonCard functional component with React.FC type and destructured props
+//* Define CommonCard functional component with Glassmorphism support
 const CommonCard: React.FC<CommonCardProps> = ({
   title,
   subtitle,
   imageUrl,
   content,
+  className = "",
+  style,
 }) => {
   return (
-    <Card>
-      {/* Display image in CardMedia */}
-      <CardMedia component="img" height="100" image={imageUrl} />
+    <Box 
+      className={`glass-card ${className}`} 
+      style={{ 
+        padding: '24px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        color: 'white',
+        ...style 
+      }}
+    >
+      {imageUrl && (
+        <Box 
+          component="img" 
+          src={imageUrl} 
+          sx={{ 
+            height: 80, 
+            width: 80, 
+            mb: 2,
+            objectFit: 'contain' 
+          }} 
+          className="weather-icon"
+        />
+      )}
 
-      <CardContent>
-        {/* Display title in Typography component */}
-        <Typography variant="h5" component="div">
-          {title}
-        </Typography>
+      <Typography variant="h5" sx={{ fontWeight: 600, mb: 0.5 }}>
+        {title}
+      </Typography>
 
-        {/* Display subtitle in Typography component with textSecondary color */}
-        <Typography variant="subtitle1" color="textSecondary">
+      {subtitle && (
+        <Typography variant="subtitle1" sx={{ color: 'rgba(255,255,255,0.7)', mb: 2 }}>
           {subtitle}
         </Typography>
+      )}
 
-        {/* Display dynamic content */}
+      <Box sx={{ width: '100%' }}>
         {content}
-      </CardContent>
-    </Card>
+      </Box>
+    </Box>
   );
 };
 

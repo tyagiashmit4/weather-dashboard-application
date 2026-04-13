@@ -13,11 +13,20 @@ const CommonSearchbar: React.FC<SearchBarProps> = ({ onSearch }) => {
 
 
   //* Event handler for search input change
-  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const query = event.target.value;
-    setSearchQuery(query); //* Update searchQuery state
-    
-    onSearch(query);  //* Call onSearch callback with the new query
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(event.target.value); //* Update searchQuery state as user types
+  };
+
+  //* Event handler for "Enter" key press
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      onSearch(searchQuery);
+    }
+  };
+
+  //* Event handler for search icon click
+  const handleSearchClick = () => {
+    onSearch(searchQuery);
   };
 
   return (
@@ -27,7 +36,8 @@ const CommonSearchbar: React.FC<SearchBarProps> = ({ onSearch }) => {
       fullWidth
       size="small" 
       value={searchQuery}
-      onChange={handleSearch}
+      onChange={handleChange}
+      onKeyDown={handleKeyDown}
       style={{
         marginTop: 20,
         marginBottom: 20,
@@ -37,7 +47,7 @@ const CommonSearchbar: React.FC<SearchBarProps> = ({ onSearch }) => {
       InputProps={{
         endAdornment: (
           <InputAdornment position="end">
-            <IconButton edge="end" aria-label="search">
+            <IconButton edge="end" aria-label="search" onClick={handleSearchClick}>
               <SearchIcon />
             </IconButton>
           </InputAdornment>
